@@ -39,8 +39,6 @@ function Header() {
       });
   };
 
-  console.log(cart, "cart");
-
   useEffect(() => {
     setIsLogin(window.location.href.toString().includes("sign-in"));
   }, []);
