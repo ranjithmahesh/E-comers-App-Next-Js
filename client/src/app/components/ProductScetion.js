@@ -14,7 +14,7 @@ function ProductSection() {
     const getLatestProduct_ = async () => {
       try {
         const res = await GlobalApi.getLatestProduct();
-        console.log(res.data);
+    
         setLatestProduct(res.data);
       } catch (error) {
         console.error("Error fetching latest product:", error);

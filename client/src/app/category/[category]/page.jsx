@@ -16,7 +16,7 @@ function Category({ params: { category } }) {
   const getLatestProduct_ = async () => {
     try {
       const res = await GlobalApi.getLatestProduct();
-      console.log(res.data);
+
       setFilterByCategory(res.data);
     } catch (error) {
       console.error("Error fetching latest product:", error);
@@ -28,7 +28,6 @@ function Category({ params: { category } }) {
       const res = await axios.get(
         `http://localhost:1337/api/products?filters[category][title][$eq]=${decodedCategory}&populate=*`
       );
-      console.log(res.data.data, "direct Hit");
 
       setFilterByCategory(res.data.data);
     } catch (error) {

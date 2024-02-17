@@ -20,12 +20,11 @@ function Header() {
   const { cart, setCart } = useContext(CartContext);
   const patch = usePathname();
 
-  console.log(patch, "patch");
   const getUserCartItem_ = () => {
     GlobalApi.getUserCartItem(user.primaryEmailAddress.emailAddress)
       .then((res) => {
         const result = res;
-        console.log(result, "result");
+
         result &&
           result.forEach((prod) => {
             setCart((cart) => [

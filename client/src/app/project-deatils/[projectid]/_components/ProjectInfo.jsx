@@ -1,19 +1,24 @@
 import { AlertOctagon, BadgeCheck, ShoppingCart } from "lucide-react";
 
+import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
+import { useContext, useState } from "react";
+import { CartContext } from "../../../_context/CartContext";
 import GlobalApi from "../../../components/_utils/GlobalApi";
 import SkeltonProjectinfo from "./skeltonProjectinfo";
-import { useUser } from "@clerk/nextjs";
-import { CartContext } from "../../../_context/CartContext";
-import { useContext } from "react";
 
 function ProjectInfo({ productDetails }) {
   const { user } = useUser();
 
   const router = useRouter();
 
+  const [successful, setSuccessful] = useState(false);
+
   const { cart, setCart } = useContext(CartContext);
 
+  setTimeout(() => {
+    successful && setSuccessful(false);
+  }, 1000);
   const onAddToCart = () => {
     if (!user) {
       router.push("/sign-in");
@@ -54,9 +59,9 @@ function ProjectInfo({ productDetails }) {
 
     GlobalApi.AddToCart(data)
       .then((res) => {
-        console.log("Add to cart", res);
         if (res) {
           getUserCartItem_();
+          setSuccessful(true);
         }
       })
       .catch((error) => {
@@ -98,6 +103,9 @@ function ProjectInfo({ productDetails }) {
             <ShoppingCart />
             Add to Cart
           </button>
+          {successful === true && (
+            <h1 className=" text-green-500 ml-5 mt-3">Added sucessfully</h1>
+          )}
         </div>
       ) : (
         <SkeltonProjectinfo />

@@ -15,7 +15,7 @@ function Cart() {
   const getSubTotal = () => {
     let total = 0;
     cart.forEach((element) => {
-      total += Number(element.product.attributes.pricing);
+      total += Number(element.product?.attributes?.pricing);
     });
 
     return total;
@@ -27,7 +27,6 @@ function Cart() {
   const detelCartItem_ = (id) => {
     GlobalApi.deletCartItem(id).then(
       (res) => {
-        console.log(res);
         if (res) {
           getUserCartItem_();
         }

@@ -47,8 +47,6 @@ const AddToCart = async (data) => {
   }
 };
 const getUserCartItem = async (userEmail) => {
-  console.log(userEmail, "userEmail");
-
   try {
     const response = await axiosClient.get(
       `/carts?populate[products][populate][0]=image&filters[email][$eq]=${userEmail}`
@@ -60,7 +58,7 @@ const getUserCartItem = async (userEmail) => {
 };
 
 const deletCartItem = async (id) => {
-  console.log(id, "KKK");
+ 
   try {
     const response = await axiosClient.delete("/carts/" + id);
     return response;
@@ -69,7 +67,7 @@ const deletCartItem = async (id) => {
   }
 };
 const FilterByCategory = async (category) => {
-  console.log(category, "KKK");
+
   try {
     const response = await axiosClient.get(
       `/products?filters[category][title][$eq]=${category}&populate=*`
