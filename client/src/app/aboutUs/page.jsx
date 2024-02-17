@@ -24,8 +24,8 @@ function AboutUs() {
               With a strong foundation in the construction field, I bring over 3
               years of valuable experience to the world of technology. Having
               worked on the prestigious Bangalore International Airport project,
-              I've honed my skills in project management, attention to detail,
-              and the drive for excellence.
+              I&apos;ve honed my skills in project management, attention to
+              detail, and the drive for excellence.
             </div>
             <div>
               Seeking new challenges and opportunities, I embarked on a journey
@@ -34,11 +34,11 @@ function AboutUs() {
               skills in web development and software engineering.
             </div>
             <div>
-              In addition to my professional endeavors, I've pursued personal
-              projects that have allowed me to explore my creativity and expand
-              my technical expertise. I've recently delved into the world of
-              React Native, developing basic applications to further broaden my
-              skill set.
+              In addition to my professional endeavors, I&apos;ve pursued
+              personal projects that have allowed me to explore my creativity
+              and expand my technical expertise. I&apos;ve recently delved into
+              the world of React Native, developing basic applications to
+              further broaden my skill set.
             </div>
             <div>
               I am passionate about leveraging technology to solve real-world
