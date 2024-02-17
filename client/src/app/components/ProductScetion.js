@@ -75,8 +75,8 @@ function ProductSection() {
       </div>
       <div className="mb-[50px]">
         <div className=" flex  flex-row items-center justify-between">
-          <h2 className="font-bold text-[20px] my-3  ">
-            Latest Fashion Tends For Women's
+          <h2 className="font-bold text-[20px] my-3">
+            Latest Fashion Tends For Women&apos;s
           </h2>
 
           <Link

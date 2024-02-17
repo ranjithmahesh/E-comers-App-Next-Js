@@ -7,6 +7,7 @@ import Link from "next/link";
 import Breadcrum from "../components/Breadcrum";
 import { usePathname } from "next/navigation";
 import SkeletonCartList from "./_components/SkeletonCartList";
+import Image from "next/image";
 
 function Cart() {
   const { cart, setCart } = useContext(CartContext);
@@ -100,13 +101,14 @@ function Cart() {
                     <ul className="space-y-4">
                       {cart.map((item, i) => (
                         <li className="flex items-center gap-4" key={i}>
-                          <img
+                          <Image
                             src={
                               item?.product?.attributes?.image?.data[0]
                                 ?.attributes?.url
                             }
                             alt={item?.attributes?.title}
                             className="size-16 rounded object-cover"
+                            layout="fill"
                           />
 
                           <div>

@@ -60,13 +60,15 @@ function Header() {
             href="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <Image
-              priority={false}
-              src="/logo.svg"
-              width={200}
-              height={200}
-              alt="Flowbite Logo"
-            />
+          <Image
+  priority={false}
+  src="/logo.svg"
+  width={200}
+  height={200}
+  alt="Flowbite Logo"
+  className="w-auto h-auto"
+/>
+
           </Link>
 
           {!user ? (

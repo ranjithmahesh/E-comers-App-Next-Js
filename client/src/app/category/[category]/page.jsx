@@ -40,10 +40,10 @@ function Category({ params: { category } }) {
     if (category === "all") {
       getLatestProduct_();
     }
-    category && tryClaa();
-  }, []);
-
-  console.log(filterByCategory, "filterByCategory");
+    tryClaa();
+  }, [category, tryClaa]);
+  
+  
   return (
     <div className="p-5 py-13 px-20 md:px-26 ">
       <Breadcrum path={decodedPath} />

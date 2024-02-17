@@ -11,15 +11,14 @@ function Cart() {
   return (
     <div className="h-[300px] border shadow-sm w-[300px] bg-gray-100 rounded-md absolute mx-10 right-10 top-12 p-5 overflow-auto">
       {cart.length == 0 ? (
-       <h1 className="text-xl  h-full text-gray-500 flex items-center justify-center">
-       Cart is Empty
-     </h1>
-     
+        <h1 className="text-xl  h-full text-gray-500 flex items-center justify-center">
+          Cart is Empty
+        </h1>
       ) : (
         <div className="mt-4 space-y-6 ">
           <ul className="space-y-4">
-            {cart.map((item) => (
-              <li className="flex items-center gap-4">
+            {cart.map((item, i) => (
+              <li className="flex items-center gap-4" key={i}>
                 <img
                   src={
                     item?.product?.attributes?.image?.data[0]?.attributes?.url
