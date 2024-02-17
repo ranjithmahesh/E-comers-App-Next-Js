@@ -16,6 +16,7 @@ function ProjectInfo({ productDetails }) {
 
   const onAddToCart = () => {
     if (!user) {
+      router.push("/sign-in");
       console.error("User is not logged in");
       return;
     }

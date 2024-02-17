@@ -8,6 +8,7 @@ import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../_context/CartContext";
 import Cart from "./Cart";
 import GlobalApi from "./_utils/GlobalApi";
+import { usePathname } from "next/navigation";
 
 function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -17,7 +18,9 @@ function Header() {
   const [isLogin, setIsLogin] = useState();
 
   const { cart, setCart } = useContext(CartContext);
+  const patch = usePathname();
 
+  console.log(patch, "patch");
   const getUserCartItem_ = () => {
     GlobalApi.getUserCartItem(user.primaryEmailAddress.emailAddress)
       .then((res) => {
@@ -46,9 +49,6 @@ function Header() {
   useEffect(() => {
     user && getUserCartItem_();
   }, [user]);
-  // useEffect(() => {
-  //   openCart === false && setOpenCart(true);
-  // }, [cart]);
 
   return (
     !isLogin && (
@@ -70,12 +70,16 @@ function Header() {
 
           {!user ? (
             <div className="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
-              <Link
-                href="/sign-in"
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-              >
-                Login
-              </Link>
+              {patch === "/sign-in" ? (
+                <div></div>
+              ) : (
+                <Link
+                  href="/sign-in"
+                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                >
+                  Login
+                </Link>
+              )}
               <button
                 data-collapse-toggle="mega-menu"
                 type="button"

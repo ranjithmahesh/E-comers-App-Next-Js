@@ -13,7 +13,7 @@ function ProjectDetail({ params }) {
   const path = usePathname();
   const [productDetails, setProductDetails] = useState(null);
   const [similarProduct, setSimilarProduct] = useState([]);
-  console.log(similarProduct, "similarProduct");
+
   useEffect(() => {
     const getProductById_ = async () => {
       try {
