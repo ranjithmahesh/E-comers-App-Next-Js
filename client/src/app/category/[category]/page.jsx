@@ -1,11 +1,11 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import GlobalApi from "../../components/_utils/GlobalApi";
-import ProductItem from "../../components/ProductItem";
 import axios from "axios";
-import Breadcrum from "../../components/Breadcrum";
 import { usePathname } from "next/navigation";
+import React, { useEffect, useState } from "react";
+import Breadcrum from "../../components/Breadcrum";
+import ProductItem from "../../components/ProductItem";
 import SkeltomProjectList from "../../components/Skeletion/SkeltomProjectList";
+import GlobalApi from "../../components/_utils/GlobalApi";
 
 function Category({ params: { category } }) {
   const decodedCategory = decodeURI(category);
@@ -41,9 +41,8 @@ function Category({ params: { category } }) {
       getLatestProduct_();
     }
     tryClaa();
-  }, [category, tryClaa]);
-  
-  
+  }, [category]);
+
   return (
     <div className="p-5 py-13 px-20 md:px-26 ">
       <Breadcrum path={decodedPath} />

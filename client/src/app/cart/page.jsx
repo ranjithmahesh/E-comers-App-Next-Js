@@ -107,8 +107,9 @@ function Cart() {
                                 ?.attributes?.url
                             }
                             alt={item?.attributes?.title}
-                            className="size-16 rounded object-cover"
-                            layout="fill"
+                            className="size-16 rounded object-cover "
+                            width={100}
+                            height={100}
                           />
 
                           <div>
