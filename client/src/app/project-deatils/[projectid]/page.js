@@ -35,7 +35,7 @@ function ProjectDetail({ params }) {
   const tryClaa = async (decodedCategory) => {
     try {
       const res = await axios.get(
-        `http://localhost:1337/api/products?filters[category][title][$eq]=${decodedCategory}&populate=*`
+        `${process.env.NEXT_PUBLIC_REST_Base_URL}/products?filters[category][title][$eq]=${decodedCategory}&populate=*`
       );
 
       setSimilarProduct(res.data.data);
@@ -43,8 +43,6 @@ function ProjectDetail({ params }) {
       console.log("Error in cat", error);
     }
   };
-
-  
 
   return (
     <div className="p-5 py-13 px-20 md:px-26">

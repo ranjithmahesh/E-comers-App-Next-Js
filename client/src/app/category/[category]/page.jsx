@@ -26,7 +26,7 @@ function Category({ params: { category } }) {
   const tryClaa = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:1337/api/products?filters[category][title][$eq]=${decodedCategory}&populate=*`
+        `${process.env.NEXT_PUBLIC_REST_Base_URL}/products?filters[category][title][$eq]=${decodedCategory}&populate=*`
       );
 
       setFilterByCategory(res.data.data);
